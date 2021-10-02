@@ -7,5 +7,20 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
+  },
+  resolve: {
+    extentions: ['.ts', '.js']
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    open: true
+  },
+  module: {
+    rules: [
+      {
+        loader: 'ts-loader',
+        test: /\.ts$/
+      }
+    ]
   }
 }
